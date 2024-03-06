@@ -14,7 +14,7 @@
 	font-family: montserrat, sans-serif;
 }
 
-input, button {
+output, input, button {
 	border: none;
 	outline: none;
 	background: none;
@@ -55,8 +55,26 @@ h1 {
 	margin: 15px;
 	position: relative;
 }
+.outcome-form {
+	display: block;
+	margin: 15px;
+	position: relative;
+}
 
 .income-form:after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+.outcome-form:after {
 	content: "";
 	position: absolute;
 	top: 0px;
@@ -75,6 +93,7 @@ h1 {
 	right: -3px;
 	bottom: -3px;
 }
+
 .form-inner {
 	position: relative;
 	z-index: 1;
@@ -83,11 +102,13 @@ h1 {
 	transition: 0.4s;
 	border-radius: 8px;
 }
+
 .form-inner input {
 	font-size: 18px;
 	padding: 10px 15px;
 	background-color: #FFF;
 }
+
 
 .form-inner input[type="text"] {
 	border-radius: 8px 0px 0px 8px;
@@ -112,13 +133,18 @@ h1 {
 	transition: 0.4s;
 }
 
-.form-inner input[type="submit"]:hover {
-	background-position: 100%;
-	color: #FFF;
+
+.form-inner input[type="text"] {
+	border-radius: 8px 0px 0px 8px;
+	flex: 1 1 100%;
 }
 
 .income-list {
 	padding: 15px;
+}
+
+.outcome-list {
+	padding: 25px;
 }
 
 .income-list .income-item {
@@ -162,5 +188,49 @@ h1 {
 	min-width: 125px;
 }
 .income-list .income-item:hover {
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+}
+
+.outcome-list .outcome-item {
+	position: relative;
+	padding: 10px 15px;
+	background-color: #FFF;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	display: flex;
+	transition: 0.4s;
+	padding-left: 75px;
+}
+
+.outcome-list .outcome-item .remove-item {
+	position: absolute;
+	width: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+
+	cursor: pointer;
+	display: block;
+	color: var(--light);
+	font-weight: 600;
+	background-color: var(--alert);
+	border-radius: 8px 0px 0px 8px;
+	transition: 0.2s;
+}
+
+.outcome-list .outcome-item:hover .remove-item {
+	width: 50px;
+}
+
+.outcome-list .outcome-item .desc {
+	flex: 1 1 100%;
+}
+
+.outcome-list .outcome-item .price,
+.outcome-list .outcome-item .date {
+	min-width: 125px;
+}
+.outcome-list .outcome-item:hover {
 	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 }
