@@ -22,6 +22,7 @@ function IncomeList({income,setIncome}){
                 ))
             }
         </div>
+        
     )
 
 }
